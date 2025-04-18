@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 40px);
+            min-width: 200px;
+            box-sizing: border-box;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        }
+        @media (max-width: 1024px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 30px);
+            }
+        }
+        
+       
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="feya.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="golod.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="blah.jpg" alt="Image 3">
+
+    
+</body>
+</html>
