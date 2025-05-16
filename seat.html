@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도</title>
+    <style> 
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            margin-top: 20px; 
+        }
+        td  {
+            width: 100px;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">자리 배치도</h2>
+    <div id = "seating"></div>
+    
+    <script>
+        const total = parseInt(prompt("참석자 수를 입력하세요 :"));
+        const col = parseInt(prompt("한 줄에 앉을 사람 입력하세요 : "));
+
+        let table = "<table>";
+            for(let i = 0; i < Math.ceil(total /col); i++){
+                table +="<tr>";
+              for(let j = 0; j < col; j++){
+                let seatNumber = i * col + j + 1;
+                if(seatNumber <= total){
+                    table += `<td>좌석 ${seatNumber}</td>`;
+                }else{
+                    table += "<td></td>";
+                }
+              }        
+              table += "</tr>"
+            }
+            table +="</table>";
+
+            document.getElementById("seating").innerHTML=table;
+
+    
+    </script>
+</body>
+</html>
